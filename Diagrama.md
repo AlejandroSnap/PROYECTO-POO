@@ -13,6 +13,7 @@ classDiagram
         -int def
         -int spd
         -int lck
+        +Attributes(int hp, int atk, int def, int spd, int lck)
     }
 
     Character <|-- Attributes
