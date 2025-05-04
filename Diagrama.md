@@ -38,6 +38,8 @@ classDiagram
         -string name
         -string desc
         -string action
+        -int damage
+        -int accuracy
         +Attack(string name, string desc, string action)
     }
 
