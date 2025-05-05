@@ -70,6 +70,10 @@ classDiagram
 
     }
 
+    class Chest {
+        
+    }
+
     Potion <|-- Objeto    
     Player o-- Hero
     Player o-- Objeto
