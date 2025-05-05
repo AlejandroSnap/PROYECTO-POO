@@ -43,10 +43,42 @@ classDiagram
         +Attack(string name, string desc, string action)
     }
 
+    class Armoure {
+        -string name
+        -string desc
+        -int def
+    }
+
+    class Weapon {
+        -string name
+        -string desc
+        -int bleed
+    }
+
+    class Player {
+        -vector<Hero> heroes
+        -vector<Objeto> objetos
+    }
+
+    class Objeto {
+        -string name
+        -string category
+        -int stack
+    }
+
+    class Potion {
+
+    }
+
+    Potion <|-- Objeto    
+    Player o-- Hero
+    Player o-- Objeto
+    Weapon o-- Attack
+    Character o-- Weapon
+    Character o-- Armoure
     Hero <|-- Character
     Soldier <|-- Character
     MiniBoss <|-- Character
     Boss <|-- Character
-    Character o-- Attack
     Character o-- Attribute
 ```
