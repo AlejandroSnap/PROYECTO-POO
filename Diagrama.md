@@ -20,8 +20,9 @@ classDiagram
 
     class Character {
         -string name
-        -map<string, Attack> attacks
         -map<string, Attribute> attributes
+        -weapon weapon
+        -Armor armor
         +Character(string name)
     }
 
@@ -41,12 +42,6 @@ classDiagram
         -int damage
         -int accuracy
         +Attack(string name, string desc, string action)
-    }
-
-    class Armoure {
-        -string name
-        -string desc
-        -int def
     }
 
     class Weapon {
@@ -89,6 +84,12 @@ classDiagram
         +Inventario()
     }
 
+    class Armor {
+        -string name
+        -string desc
+        -string def
+    }
+
     
     Inventario o-- Objeto
     Potion <|-- Objeto    
@@ -96,7 +97,7 @@ classDiagram
     Player o-- Inventario
     Weapon o-- Attack
     Character o-- Weapon
-    Character o-- Armoure
+    Character o-- Armor
     Hero <|-- Character
     Soldier <|-- Character
     MiniBoss <|-- Character
