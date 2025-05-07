@@ -1,6 +1,5 @@
 ```mermaid
 classDiagram
-direction LR
 
     class Hero {
         +Hero()
