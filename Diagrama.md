@@ -1,7 +1,7 @@
-# Diagrama
-
 ```mermaid
 classDiagram
+direction LR
+
     class Hero {
         +Hero()
     }
@@ -117,7 +117,7 @@ classDiagram
     }
 
     class Enemy {
-        
+
     }
 
     Dungeon o-- Room
