@@ -54,34 +54,39 @@ classDiagram
 
     class Player {
         -vector<Hero> heroes
-        -vector<Objeto> objetos
+        -vector<Object> objetos
         +Player()
     }
 
-    class Objeto {
+    class Object {
         -string name
         -string category
         -int stack
-        +Objeto(string name, string category, int stack)
+        +Object(string name, string category, int stack)
     }
 
     class Potion {
-        -function efecto
-        +Potion(string name, function efecto)
-        +usar(Character objetivo)
+        -function effect
+        +Potion(string name, function effect)
+        +usar(Character target)
     }
 
     class Chest {
-        
+        -string type
+        -vector<Object> items
+        +Chest(string type)
     }
 
-    class Mercado {
-        
+    class Market {
+        -vector<Weapon> weapons
+        -vector<Armor> armors
+        +Market()
+        +buy(Item item, Hero hero)
     }
 
-    class Inventario {
-        -vector<Objeto> objetos
-        +Inventario()
+    class Inventory {
+        -vector<Object> objetos
+        +Inventory()
     }
 
     class Armor {
@@ -90,11 +95,37 @@ classDiagram
         -string def
     }
 
-    
-    Inventario o-- Objeto
-    Potion <|-- Objeto    
+    class Treasure {
+        -vector<Weapon> weapons
+        -vector<Attribute> bonuses
+        +Treasure()
+        +give(Hero hero)
+    }
+
+    class SantoGrial {
+        +heal(vector<Hero> heroes)
+        +SantoGrial()
+        +increaseAttributes(vector<Hero> heroes)
+    }
+
+    class Dungeon {
+
+    }
+
+    class Room {
+        -Enemies
+    }
+
+    class Enemy {
+        
+    }
+
+    Dungeon o-- Room
+    Room o-- Enemy
+    Inventory o-- Object
+    Potion <|-- Object    
     Player o-- Hero
-    Player o-- Inventario
+    Player o-- Inventory
     Weapon o-- Attack
     Character o-- Weapon
     Character o-- Armor
@@ -103,4 +134,12 @@ classDiagram
     MiniBoss <|-- Character
     Boss <|-- Character
     Character o-- Attribute
+
+    Market o-- Weapon
+    Market o-- Armor
+    Market o-- Hero
+    Chest o-- Object
+    Treasure o-- Weapon
+    Treasure o-- Hero
+    Treasure o-- Attribute
 ```
