@@ -74,9 +74,19 @@ classDiagram
         
     }
 
+    class Mercado {
+        
+    }
+
+    class Inventario {
+        -vector<Objeto> objetos
+        +Inventario()
+    }
+
+    Inventario o-- Objeto
     Potion <|-- Objeto    
     Player o-- Hero
-    Player o-- Objeto
+    Player o-- Inventario
     Weapon o-- Attack
     Character o-- Weapon
     Character o-- Armoure
