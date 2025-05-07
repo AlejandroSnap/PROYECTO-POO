@@ -67,11 +67,13 @@ classDiagram
         -string name
         -string category
         -int stack
-        +Inventario(string name, string category, int stack)
+        +Objeto(string name, string category, int stack)
     }
 
     class Potion {
-
+        -function efecto
+        +Potion(string name, function efecto)
+        +usar(Character objetivo)
     }
 
     class Chest {
@@ -87,6 +89,7 @@ classDiagram
         +Inventario()
     }
 
+    
     Inventario o-- Objeto
     Potion <|-- Objeto    
     Player o-- Hero
