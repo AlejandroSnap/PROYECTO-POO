@@ -113,7 +113,7 @@ direction LR
     }
 
     class Room {
-        -Enemies
+        -vector<Enemy> Enemies
     }
 
     class Enemy {
