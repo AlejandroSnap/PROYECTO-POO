@@ -53,17 +53,21 @@ classDiagram
         -string name
         -string desc
         -int bleed
+        -vector<Attack> attacks
+        +Weapon(string name, string desc, int bleed)
     }
 
     class Player {
         -vector<Hero> heroes
         -vector<Objeto> objetos
+        +Player()
     }
 
     class Objeto {
         -string name
         -string category
         -int stack
+        +Inventario(string name, string category, int stack)
     }
 
     class Potion {
