@@ -119,21 +119,26 @@ classDiagram
 
     }
 
+    Character <|-- Enemy
+    Character <|-- Hero
+
+    Enemy <|-- Soldier
+    Enemy <|-- MiniBoss
+    Enemy <|-- Boss
+
+    %% Herencia (Generalización)
+    Object <|-- Potion
+
+    %% Agregación (o-- indica una relación "tiene-un")
     Dungeon o-- Room
     Room o-- Enemy
     Inventory o-- Object
-    Potion <|-- Object    
     Player o-- Hero
     Player o-- Inventory
     Weapon o-- Attack
     Character o-- Weapon
     Character o-- Armor
-    Hero <|-- Character
-    Soldier <|-- Character
-    MiniBoss <|-- Character
-    Boss <|-- Character
     Character o-- Attribute
-
     Market o-- Weapon
     Market o-- Armor
     Market o-- Hero
